@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinx Esports</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="LOGO/log.jpg" alt="Jinx Esports Logo" class="logo">
+        </div>
+        <h1>Welcome to Jinx Esports</h1>
+    </header>
+
+    <main>
+        <section class="slider">
+            <div class="slider-container">
+                <div class="slider-frame">
+                    <img src="LOGO/1.jpg" alt="Clan Screenshot 1" class="slide">
+                    <img src="LOGO/2.jpg" alt="Clan Screenshot 2" class="slide">
+                    <img src="LOGO/3.jpg" alt="Clan Screenshot 3" class="slide">
+                </div>
+            </div>
+        </section>
+
+        <!-- Added Train to Improve Section -->
+        <section class="train-to-improve">
+            <div class="video-container">
+                <video src="LOGO/video.mp4" controls autoplay muted loop></video>
+                <h2 class="video-caption">Train to Improve Headshot Rate</h2>
+            </div>
+            <div class="image-frame">
+                <img src="LOGO/4.jpg" alt="Training Example">
+                <img src="LOGO/5.jpg" alt="Training Example">
+            </div>
+        </section>
+         Weekly Ranking 
+
+        <section class="about">
+            <h2>About Jinx Esports</h2>
+            <p>Jinx Esports is a thriving community of passionate gamers united by a shared goal of excellence and camaraderie. Whether you're a seasoned player or just starting your journey, Jinx Esports offers opportunities for all levels to connect, compete, and grow in the world of professional gaming.</p>
+
+            <p>Our mission is to empower individuals to unleash their gaming potential. With regular tournaments, skill-building sessions, and a supportive network, we help players transform their dreams into reality. Join us and be part of a legacy that's redefining esports.</p>
+
+            <p>We believe in fostering a community that values teamwork, strategy, and determination. At Jinx Esports, every game is a chance to showcase your talent, learn from others, and make your mark on the global stage. Together, we aim to inspire and achieve greatness.</p>
+
+            <p>As part of Jinx Esports, you’ll gain access to exclusive resources, mentoring programs, and opportunities to participate in national and international tournaments. Join the movement and help us shape the future of esports.</p>
+
+            <p>Ready to take your skills to the next level? Become part of Jinx Esports today and connect with a vibrant community of players who share your passion for gaming.</p>
+        </section>
+
+        <section class="join">
+            <h2>Join Us</h2>
+            <form id="myform" submit-form" method="POST" class="join-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="role">I want to:</label>
+                <select id="role" name="role" required>
+                    <option value="join_team">Join a Team</option>
+                    <option value="find_players">Find Players</option>
+                    <option value="find_team">Find a Team</option>
+                    <option value="become_pro">Become a Professional Player</option>
+                </select>
+            
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us more..."></textarea>
+            
+                <button type="submit">Submit</button>
+            </form>            
+        </section>
+    </main>
+
+    <footer  class="footer">
+        <p>&copy; 2024 Jinx Esports. All rights reserved.</p>
+        <p>Contact us:jinxespors70@gmail.com </p>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000);
+            // JavaScript to redirect on form submission
+    document.getElementById('myform').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      window.location.href = 'success.html'; // Redirect to success page
+    });
+    
+    </script>
+</body>
+</html>
